@@ -1,5 +1,9 @@
 # Doctrine Postgres Schema Extra Bundle
 
+```bash
+composer require programmatically/doctrine-postgres-schema-extra-bundle:dev-main
+```
+
 Add to `doctrine.yaml`:
 
 ```yaml
@@ -16,5 +20,3 @@ doctrine_postgres_schema_extra:
     ignored_index:
         - name of the index
 ```
-
-"Programmatically\\DoctrinePostgresSchemaExtraBundle\\": "vendor/programmatically/doctrine-postgres-schema-extra-bundle/src/"
