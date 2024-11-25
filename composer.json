@@ -1,0 +1,23 @@
+{
+    "name": "programmatically/doctrine-postgres-schema-extra-bundle",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Programmatically\\DoctrinePostgresSchemaExtraBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Baldur Rensch",
+            "email": "brensch@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/config": "^7.1",
+        "symfony/dependency-injection": "^7.1",
+        "symfony/http-kernel": "^7.1",
+        "doctrine/dbal": "^3 || ^4"
+    }
+}
