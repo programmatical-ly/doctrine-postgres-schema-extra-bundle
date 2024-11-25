@@ -6,9 +6,14 @@ use Doctrine\DBAL\Schema\PostgreSQLSchemaManager;
 
 class CustomPostgreSQLSchemaManager extends PostgreSQLSchemaManager
 {
+    /** @var string[] */
     private array $indexesToFilter = [];
 
-    protected function _getPortableTableIndexesList($tableIndexes, $tableName = null): array
+    /**
+     * Parameters:
+     * array<int,array<string,mixed>> $tableIndexes
+     */
+    protected function _getPortableTableIndexesList($tableIndexes, string $tableName): array
     {
         $indexes = parent::_getPortableTableIndexesList($tableIndexes, $tableName);
 
@@ -21,6 +26,9 @@ class CustomPostgreSQLSchemaManager extends PostgreSQLSchemaManager
         return $indexes;
     }
 
+    /**
+     * @param string[] $indexesToFilter
+     */
     public function setIndexesToFilter(array $indexesToFilter): void
     {
         $this->indexesToFilter = $indexesToFilter;

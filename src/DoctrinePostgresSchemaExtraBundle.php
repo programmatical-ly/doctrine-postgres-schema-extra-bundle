@@ -12,6 +12,9 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class DoctrinePostgresSchemaExtraBundle extends AbstractBundle
 {
+    /**
+     * @param array<string, mixed> $config
+     */
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         if ($container->env() === 'prod') {
@@ -45,11 +48,13 @@ class DoctrinePostgresSchemaExtraBundle extends AbstractBundle
 
     public function configure(DefinitionConfigurator $definition): void
     {
-        $definition->rootNode()
-            ->children()
-            ->arrayNode('ignored_index')
-                ->scalarPrototype()
-            ->end()
+        /** @phpstan-ignore method.nonObject, method.nonObject, method.nonObject, method.notFound */
+        $definition
+            ->rootNode()
+                ->children()
+                    ->arrayNode('ignored_index')
+                        ->scalarPrototype()
+                    ->end()
         ;
     }
 }
