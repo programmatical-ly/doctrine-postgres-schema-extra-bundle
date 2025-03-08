@@ -13,7 +13,7 @@ class CustomPostgreSQLSchemaManager extends PostgreSQLSchemaManager
      * Parameters:
      * array<int,array<string,mixed>> $tableIndexes
      */
-    protected function _getPortableTableIndexesList($tableIndexes, string $tableName): array
+    protected function _getPortableTableIndexesList($tableIndexes, $tableName = null): array
     {
         $indexes = parent::_getPortableTableIndexesList($tableIndexes, $tableName);
 
