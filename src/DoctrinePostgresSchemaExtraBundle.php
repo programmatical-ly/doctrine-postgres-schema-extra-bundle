@@ -48,7 +48,6 @@ class DoctrinePostgresSchemaExtraBundle extends AbstractBundle
 
     public function configure(DefinitionConfigurator $definition): void
     {
-        /** @phpstan-ignore method.nonObject, method.nonObject, method.nonObject, method.notFound */
         $definition
             ->rootNode()
                 ->children()
